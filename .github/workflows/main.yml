@@ -27,6 +27,7 @@ jobs:
       - name: ssh-deploy
         uses: easingthemes/ssh-deploy@v5.1.0
         with:
+          REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
           ARGS: '-avz --delete'
           SOURCE: 'dist/'
